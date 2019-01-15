@@ -60,7 +60,7 @@ public class MainClass {
 							
 					}
 					
-					cts = cts.replaceAll("A", ",A,B,A,C,C,A,B,A,").replaceAll("CC", "C,C");
+					cts = cts.replaceAll("A", ",A,B,A,C,A,B,A,");
 					
 					chars = cts.replaceFirst(",", "").split(",");
 					
