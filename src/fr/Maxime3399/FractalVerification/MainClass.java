@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class MainClass {
 	
-	static String version = "v1.0.0-a1.0";
+	static String version = "v1.0.0";
 	
 	public static void main(String[]args) {
 		
-		System.out.println("  ===== Fractal Verification =====\n Version : "+version+"\n ");
+		System.out.println("  ===== Fractal Verification =====\n Version : "+version);
 		execute();
 		
 	}
@@ -17,7 +17,7 @@ public class MainClass {
 		
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Veuillez entrer le nombre d'itérations.");
+		System.out.println(" \n-> Veuillez entrer le nombre d'itérations.");
 		
 		String str = sc.nextLine();
 		
@@ -27,41 +27,10 @@ public class MainClass {
 			
 		}else {
 			
+			int it = 0;
 			try {
 				
-				int it = Integer.parseInt(str);
-				String chars[] = "A,B,A,C,C,A,B,A".split(",");
-				
-				for(int i = 1; i < it; i++) {
-					
-					String cts = "";
-						
-					for(String c : chars) {
-							
-						cts = cts+c;
-							
-					}
-					
-					cts = cts.replaceAll("A", ",A,B,A,C,C,A,B,A,").replaceAll("CC", "C,C");
-					chars = cts.replaceFirst(",", "").split(",");
-					
-				}
-				
-				String cts = "";
-				
-				for(String c : chars) {
-						
-					cts = cts+" | "+c;
-						
-				}
-				
-				System.out.println("Taille de la liste : "+chars.length);
-				if(chars.length > 999) {
-					System.out.println("La liste est trop longue pour être affichée dans le console !");
-				}else {
-					System.out.println("Liste : "+cts);
-				}
-				execute();
+				it = Integer.parseInt(str);
 				
 			}catch (Exception e) {
 				
@@ -69,6 +38,58 @@ public class MainClass {
 				execute();
 				
 			}
+			
+			String chars[] = null;
+			
+			System.out.println("[|] Création de la liste de variables...");
+			for(int i = 0; i < it; i++) {
+				
+				System.out.println("# Iteration for 45 -> "+i);
+				
+				if(i == 0) {
+					
+					chars = "A".split(",");
+					
+				}else{
+					
+					String cts = "";
+					
+					for(String c : chars) {
+						
+						cts = cts+c;
+							
+					}
+					
+					cts = cts.replaceAll("A", ",A,B,A,C,C,A,B,A,").replaceAll("CC", "C,C");
+					
+					chars = cts.replaceFirst(",", "").split(",");
+					
+				}
+				
+			}
+			
+			System.out.println("[|] Affichage en cours...");
+			int cc = 0;
+			if(chars != null) {
+				cc = chars.length;
+			}
+			
+			System.out.println("Taille de la liste : "+cc);
+			if(cc > 999) {
+				System.out.println("La liste est trop longue pour être affichée dans la console !");
+			}else if(chars != null){
+				String cts = "";
+				
+				for(String c : chars) {
+						
+					cts = cts+" | "+c;
+						
+				}
+				System.out.println("Liste : "+cts);
+			}else {
+				System.out.println("Il n'y a aucuns éléments dans la liste.");
+			}
+			execute();
 			
 		}
 		
