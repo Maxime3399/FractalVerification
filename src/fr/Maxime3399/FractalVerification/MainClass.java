@@ -44,7 +44,7 @@ public class MainClass {
 			System.out.println("[|] Création de la liste de variables...");
 			for(int i = 0; i < it; i++) {
 				
-				System.out.println("# Iteration for 45 -> "+i);
+				System.out.println("# Iteration -> "+i);
 				
 				if(i == 0) {
 					
