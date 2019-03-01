@@ -6,7 +6,7 @@ import fr.Maxime3399.FractalVerification.custom.Chrono;
 
 public class MainClass {
 	
-	static String version = "v1.0.1";
+	static String version = "v1.0.2";
 	
 	public static void main(String[]args) {
 		
@@ -95,7 +95,7 @@ public class MainClass {
 				System.out.println("Il n'y a aucuns éléments dans la liste.");
 			}
 			ch.stop();
-			System.out.println("Durée de l'oppération : "+ch.getDureeSec()+" s "+ch.getDureeMs()+" ms");
+			System.out.println("Durée de l'oppération : "+ch.getDureeMs()+" ms");
 			execute();
 			
 		}
