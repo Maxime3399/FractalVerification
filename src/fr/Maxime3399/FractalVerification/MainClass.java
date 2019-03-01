@@ -6,7 +6,7 @@ import fr.Maxime3399.FractalVerification.custom.Chrono;
 
 public class MainClass {
 	
-	static String version = "v1.0.0";
+	static String version = "v1.0.1";
 	
 	public static void main(String[]args) {
 		
