@@ -2,6 +2,8 @@ package fr.Maxime3399.FractalVerification;
 
 import java.util.Scanner;
 
+import fr.Maxime3399.FractalVerification.custom.Chrono;
+
 public class MainClass {
 	
 	static String version = "v1.0.0";
@@ -38,6 +40,9 @@ public class MainClass {
 				execute();
 				
 			}
+			
+			Chrono ch = new Chrono();
+			ch.start();
 			
 			String chars[] = null;
 			
@@ -89,6 +94,8 @@ public class MainClass {
 			}else {
 				System.out.println("Il n'y a aucuns éléments dans la liste.");
 			}
+			ch.stop();
+			System.out.println("Durée de l'oppération : "+ch.getDureeSec()+" s "+ch.getDureeMs()+" ms");
 			execute();
 			
 		}
